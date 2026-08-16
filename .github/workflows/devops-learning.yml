@@ -14,5 +14,5 @@ jobs:
 
     steps:
       - name: Display Variable
-        run: echo "Application Name is $APP_NAME envoronment is $ENVIRNOMENT and version is $VERSION"
+        run: echo "Application Name is $APP_NAME envoronment is $ENVIRONMENT and version is $VERSION"
 
