@@ -1,20 +1,20 @@
-name: Day 3 Jobs Demo
+name: Day 3 Dependency Demo
 
 on:
   push:
 
 jobs:
-  first-job:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Step 1
-        run: echo "This is the first job"
+      - name: Build
+        run: echo "Building application"
 
-  second-job:
+  test:
+    needs: build
     runs-on: ubuntu-latest
-
     steps:
-      - name: Step 1
-        run: echo "This is the second job"
+      - name: Test
+        run: echo "Testing application"
+
 
