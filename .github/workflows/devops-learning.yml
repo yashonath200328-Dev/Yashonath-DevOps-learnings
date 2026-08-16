@@ -1,22 +1,20 @@
-name: Day2 Workflow
+name: Day 3 Jobs Demo
 
 on:
   push:
 
 jobs:
-  learning-runner:
+  first-job:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Step 1
-      run: echo "Starting Workflow"
+      - name: Step 1
+        run: echo "This is the first job"
 
-    - name: Step 2
-      run: echo "Understanding GitHub Runners"
+  second-job:
+    runs-on: ubuntu-latest
 
-    - name: Step 3
-      run: echo "Week 2 Day 2 Complete"
-
-    - name: show date
-      run:  date
+    steps:
+      - name: Step 1
+        run: echo "This is the second job"
 
