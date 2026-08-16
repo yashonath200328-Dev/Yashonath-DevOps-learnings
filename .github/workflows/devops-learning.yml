@@ -14,15 +14,11 @@ jobs:
 
     steps:
       - name: Display Variable
-        run: echo "Application Name is $APP_NAME envoronment is $ENVIRONMENT and version is $VERSION"
+        run: echo "Application Name is $APP_NAME environment is $ENVIRONMENT and version is $VERSION"
 
-   secrect-job:
-     run-on: ubuntu-latest
+  secret-job:
+    runs-on: ubuntu-latest
 
-     steps: 
+    steps: 
       - name: Read secret
-        run: eecho "Hello ${{ secrets.MY_NAME }}"
-   
-  
-     
-
+        run: echo "Hello ${{ secrets.MY_NAME }}"
