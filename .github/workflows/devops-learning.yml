@@ -1,13 +1,18 @@
-name: Secret Demo
+name: Variables Demo
 
 on:
   push:
 
+env:
+  APP_NAME: BillingAPI
+  ENVIRONMENT: DEV
+  VERSION: 1.0
+
 jobs:
-  secret-job:
+  show-variable:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Read Secret
-        run: echo "Hello ${{ secrets.MY_NAME }}"
+      - name: Display Variable
+        run: echo "Application Name is $APP_NAME envoronment is $ENVIROMNET and version is $VERSION"
 
