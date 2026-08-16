@@ -1,20 +1,16 @@
-name: Day 3 Dependency Demo
+name: Variables Demo
 
 on:
   push:
 
+env:
+  APP_NAME: BillingAPI
+
 jobs:
-  build:
+  show-variable:
     runs-on: ubuntu-latest
-    steps:
-      - name: Build
-        run: echo "Building application"
 
-  test:
-    needs: build
-    runs-on: ubuntu-latest
     steps:
-      - name: Test
-        run: echo "Testing application"
-
+      - name: Display Variable
+        run: echo "Application Name is $APP_NAME"
 
