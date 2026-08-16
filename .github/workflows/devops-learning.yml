@@ -16,3 +16,13 @@ jobs:
       - name: Display Variable
         run: echo "Application Name is $APP_NAME envoronment is $ENVIRONMENT and version is $VERSION"
 
+   secrect-job:
+     run-on: ubuntu-latest
+
+     steps: 
+      - name: Read secret
+        run: eecho "Hello ${{ secrets.MY_NAME }}"
+   
+  
+     
+
