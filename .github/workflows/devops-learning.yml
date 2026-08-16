@@ -1,12 +1,19 @@
-name: My First Workflow
+name: Day2 Workflow
 
 on:
   push:
 
 jobs:
-  hello:
+  learning-runner:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Print Message
-        run: echo "Hello Yashonath"
+    - name: Step 1
+      run: echo "Starting Workflow"
+
+    - name: Step 2
+      run: echo "Understanding GitHub Runners"
+
+    - name: Step 3
+      run: echo "Week 2 Day 2 Complete"
+
