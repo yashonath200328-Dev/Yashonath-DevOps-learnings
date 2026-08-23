@@ -1,0 +1,11 @@
+name: Day 5 CI pipeline
+on:
+  push:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: List Repository Files
+        run: ls -la
