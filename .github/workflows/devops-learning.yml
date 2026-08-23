@@ -7,5 +7,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
-      - name: List Repository Files
-        run: ls -la
+
+      - name: Generate build output
+        run: |
+          echo "Build successful" > build-info.txt
+          echo "Created by GitHub Actions" >> build-info.txt
+
+      - name: Display Build output
+        run: cat build-info.txt
+
