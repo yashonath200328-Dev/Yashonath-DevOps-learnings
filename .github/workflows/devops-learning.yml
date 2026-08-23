@@ -1,24 +1,11 @@
-name: Variables Demo
-
+name: Day 5 CI pipeline
 on:
   push:
-
-env:
-  APP_NAME: BillingAPI
-  ENVIRONMENT: DEV
-  VERSION: 1.0
-
 jobs:
-  show-variable:
+  build:
     runs-on: ubuntu-latest
-
     steps:
-      - name: Display Variable
-        run: echo "Application Name is $APP_NAME environment is $ENVIRONMENT and version is $VERSION"
-
-  secret-job:
-    runs-on: ubuntu-latest
-
-    steps: 
-      - name: Read secret
-        run: echo "Hello ${{ secrets.MY_NAME }}"
+      - name: Checkout code
+        uses: actions/checkout@v4
+      - name: List Repository Files
+        run: ls -la
