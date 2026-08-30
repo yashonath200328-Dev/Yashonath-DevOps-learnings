@@ -1,0 +1,42 @@
+name: Week 2 Final Pipeline
+
+on:
+  push:
+
+env:
+  APP_NAME: DevOpsLearning
+  VERSION: 1.0
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Display Variables
+        run: echo "$APP_NAME Version $VERSION"
+
+      - name: Create Build Artifact
+        run: |
+          echo "Application: $APP_NAME" > build-info.txt
+          echo "Version: $VERSION" >> build-info.txt
+          echo "Build Successful" >> build-info.txt
+
+      - name: Upload Artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-output
+          path: build-info.txt
+
+  test:
+    needs: build
+
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Run Tests
+        run: echo "Tests Passed"
