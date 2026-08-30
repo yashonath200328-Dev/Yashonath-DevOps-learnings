@@ -1,0 +1,35 @@
+name: Week 3 Day 2 Build Stage
+
+on:
+  push:
+
+env:
+  APP_NAME: DevOpsLearning
+  VERSION: 1.0
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Restore Dependencies
+        run: echo "Restoring dependencies..."
+
+      - name: Compile Application
+        run: echo "Compiling $APP_NAME"
+
+      - name: Package Application
+        run: |
+          mkdir package
+          echo "$APP_NAME Version $VERSION" > package/app.txt
+
+      - name: Upload Package
+        uses: actions/upload-artifact@v4
+        with:
+          name: build-package
+          path: package
